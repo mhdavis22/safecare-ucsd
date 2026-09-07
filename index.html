@@ -13,6 +13,8 @@
     h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     main { position: relative; overflow: hidden; }
     main::before { content: ''; position: absolute; left: 1.25rem; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, #99f6e4 12%, #cbd5e1 50%, transparent 90%); pointer-events: none; }
+    .title-primary { position: relative; display: inline-block; background: #cbd5e1; padding: .15rem .75rem .25rem 0; }
+    .title-primary::before { content: ''; position: absolute; right: 100%; top: 0; bottom: 0; width: 100vw; background: #cbd5e1; }
     main > section { max-width: 1120px; margin-left: auto; margin-right: auto; }
     main > section[aria-labelledby="why-privacy-matters"] { max-width: 1400px; }
     main > section:not([aria-labelledby="why-privacy-matters"]) .text-xs { font-size: 0.875rem; line-height: 1.55; }
@@ -45,9 +47,9 @@
   <main id="top" class="w-full py-8 flex-grow">
     
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-left mb-10">
-      <div class="bg-slate-300 border-l-4 border-teal-700 -ml-6 md:-ml-12 pl-6 md:pl-12 pr-8 py-5 md:py-6 mb-5 max-w-5xl">
+      <div class="bg-slate-100 border-l-4 border-teal-600 -ml-6 md:-ml-12 pl-6 md:pl-12 pr-8 py-5 md:py-6 mb-5 max-w-5xl">
         <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-          <span class="block">Safe Care</span>
+          <span class="title-primary">Safe Care</span>
           <span class="block text-teal-700 text-2xl md:text-4xl mt-2">Clarifying privacy and confidentiality for health insurance at UCSD</span>
         </h1>
       </div>
