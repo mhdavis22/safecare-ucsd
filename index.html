@@ -10,15 +10,15 @@
     .step-card:hover { transform: translateY(-2px); }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-[#f5f7fa] text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-  <header class="bg-amber-500 text-slate-900 px-4 py-2 sticky top-0 z-50 shadow-md">
+  <header class="bg-[#102a43] text-white px-4 py-3 sticky top-0 z-50 shadow-md">
     <div class="max-w-5xl mx-auto flex justify-between items-center text-xs md:text-sm">
       <span class="font-semibold flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
         Safe Browsing Active
       </span>
-      <button onclick="emergencyExit()" class="bg-red-700 hover:bg-red-800 text-white font-bold px-3 py-1 rounded transition text-xs flex items-center gap-1">
+      <button onclick="emergencyExit()" class="bg-rose-600 hover:bg-rose-700 text-white font-bold px-3 py-1.5 rounded transition text-xs flex items-center gap-1">
         <span>QUICK EXIT (ESC)</span>
       </button>
     </div>
@@ -27,9 +27,9 @@
   <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
     
     <div class="text-center mb-10">
-      <span class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-800 mb-4">Your privacy matters</span>
+      <span class="inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-800 mb-4">Your privacy matters</span>
       <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-        SafeCare <span class="text-blue-600">UCSD</span>
+        SafeCare <span class="text-teal-600">UCSD</span>
       </h1>
       <div class="max-w-3xl mx-auto space-y-4 text-base md:text-lg leading-relaxed text-slate-600">
         <p>Many college students rely on a parent’s health insurance. That can make privacy concerns feel like a barrier to getting sexual, reproductive, mental, or gender-affirming care.</p>
@@ -38,19 +38,21 @@
       </div>
     </div>
 
-    <section aria-labelledby="why-privacy-matters" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+    <section aria-labelledby="why-privacy-matters" class="grid grid-cols-1 md:grid-cols-2 gap-px overflow-hidden rounded-2xl bg-slate-200 border border-slate-200 shadow-sm mb-10">
       <h2 id="why-privacy-matters" class="sr-only">Why privacy matters</h2>
-      <figure class="bg-blue-700 text-white rounded-xl p-6 shadow-md">
-        <blockquote class="text-2xl md:text-3xl font-extrabold leading-tight">“18% of 15–17-year-olds and 9% of 18–25-year-olds said they might skip sexual or reproductive care if their parents could find out.”<sup class="text-sm align-super ml-1"><a href="#ref-1" class="underline" aria-label="Go to reference 1">[1]</a></sup></blockquote>
-        <figcaption class="mt-4 text-sm text-blue-100">Privacy concerns can affect whether young people seek care.</figcaption>
+      <figure class="bg-[#123b5d] text-white p-7 md:p-8">
+        <div class="text-4xl md:text-5xl font-extrabold tracking-tight text-teal-300">18% <span class="text-2xl md:text-3xl text-white/80">/ 9%</span></div>
+        <blockquote class="mt-3 text-base md:text-lg font-semibold leading-relaxed">of 15–17-year-olds / 18–25-year-olds said they might skip sexual or reproductive care if their parents could find out.<sup class="text-xs align-super ml-1"><a href="#ref-1" class="underline" aria-label="Go to reference 1">[1]</a></sup></blockquote>
+        <figcaption class="mt-4 text-sm text-slate-300">Privacy concerns can affect whether young people seek care.</figcaption>
       </figure>
-      <figure class="bg-amber-500 text-slate-900 rounded-xl p-6 shadow-md">
-        <blockquote class="text-2xl md:text-3xl font-extrabold leading-tight">“Young people who did not want their parents to know they were taking PrEP were 70% less likely to be willing to take it.”<sup class="text-sm align-super ml-1"><a href="#ref-2" class="underline" aria-label="Go to reference 2">[2]</a></sup></blockquote>
-        <figcaption class="mt-4 text-sm text-amber-950">Confidentiality can shape preventive-care decisions.</figcaption>
+      <figure class="bg-white p-7 md:p-8">
+        <div class="text-4xl md:text-5xl font-extrabold tracking-tight text-teal-600">70% <span class="text-2xl md:text-3xl text-slate-400">less likely</span></div>
+        <blockquote class="mt-3 text-base md:text-lg font-semibold leading-relaxed text-slate-700">to be willing to take PrEP when young people did not want their parents to know.<sup class="text-xs align-super ml-1"><a href="#ref-2" class="underline text-teal-700" aria-label="Go to reference 2">[2]</a></sup></blockquote>
+        <figcaption class="mt-4 text-sm text-slate-500">Confidentiality can shape preventive-care decisions.</figcaption>
       </figure>
     </section>
 
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-10">
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-10">
       <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
         <span>1. Select Your Health Insurance Plan</span>
       </h2>
@@ -127,7 +129,7 @@
       </div>
     </section>
 
-    <section id="ccr-section" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-10">
+    <section id="ccr-section" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-10">
       <h2 class="text-xl font-bold text-slate-900 mb-2">2. Confidential Communication Request Script</h2>
       <p class="text-xs text-slate-600 mb-4">This script is for people on a parent’s plan who need to request a CCR. It is not needed for UC SHIP if you follow the Anthem steps above.</p>
 
@@ -139,7 +141,7 @@
       </div>
     </section>
 
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
       <h2 class="text-xl font-bold text-slate-900 mb-4">3. Confidential On-Campus & Local Resources</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div class="p-3 bg-slate-50 rounded border border-slate-200">
@@ -155,7 +157,7 @@
       </div>
     </section>
 
-    <section id="references" aria-labelledby="references-heading" class="bg-slate-100 rounded-xl border border-slate-200 p-6 mt-10">
+    <section id="references" aria-labelledby="references-heading" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 mt-10">
       <h2 id="references-heading" class="text-lg font-bold text-slate-900 mb-4">Sources</h2>
       <ol class="list-decimal list-outside ml-5 space-y-3 text-xs leading-relaxed text-slate-600">
         <li id="ref-1">Fuentes, Liza, et al. “Adolescents' and Young Adults' Reports of Barriers to Confidential Health Care and Receipt of Contraceptive Services.” <em>The Journal of Adolescent Health</em>, vol. 62, no. 1, 2018, pp. 36–43. <a href="https://doi.org/10.1016/j.jadohealth.2017.10.011" target="_blank" rel="noopener" class="text-blue-700 underline break-all">https://doi.org/10.1016/j.jadohealth.2017.10.011</a></li>
@@ -166,7 +168,7 @@
 
   </main>
 
-  <footer class="bg-slate-900 text-slate-400 text-xs py-6 mt-12">
+  <footer class="bg-[#102a43] text-slate-300 text-xs py-8 mt-12">
     <div class="max-w-4xl mx-auto px-4 text-center space-y-2">
       <p>SafeCare UCSD is an independent, student-led health advocacy project.</p>
       <p class="text-slate-500">This site provides educational information regarding California insurance privacy law and does not constitute legal or medical advice.</p>
