@@ -176,14 +176,18 @@
     </section>
 
     <section id="ccr-section" class="border-l-4 border-slate-300 pl-5 md:pl-10 pr-6 md:pr-12 mb-12">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">2. Confidential Communication Request Script</h2>
-      <p class="text-xs text-slate-600 mb-4">This script is for people on a parent’s plan who need to request a CCR. It is not needed for UC SHIP if you follow the Anthem steps above.</p>
+      <div class="flex items-baseline justify-between gap-4 mb-2">
+        <h2 class="text-xl font-bold text-slate-900">2. Confidential Communication Request</h2>
+        <span class="hidden sm:block text-[10px] uppercase tracking-[0.2em] text-slate-400">Suggested wording</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-5">For people on a parent’s plan who need to request a CCR. UC SHIP students can use the Anthem steps above instead.</p>
 
-      <div class="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs leading-relaxed relative">
-        <p id="script-text">
-          "Hi, my insurance account number is [<span class="text-amber-400">YOUR_ACCOUNT_NUMBER</span>]. I am going to receive sensitive healthcare and I need a Confidential Communication Request form. Please send my EOBs and related communications to me at [<span class="text-amber-400">YOUR_EMAIL_OR_MAILING_ADDRESS</span>] instead of to the primary policyholder. I am the person receiving the care."
+      <div class="border-y border-slate-300 py-6 md:py-8 relative">
+        <p class="text-xs uppercase tracking-[0.2em] text-teal-700 font-bold mb-3">When you call your insurer</p>
+        <p id="script-text" class="font-serif text-lg md:text-xl leading-relaxed text-slate-800 max-w-5xl">
+          “Hi, my insurance account number is <span class="text-teal-700 font-semibold">[YOUR ACCOUNT NUMBER]</span>. I am going to receive sensitive healthcare and need a Confidential Communication Request form. Please send my EOBs and related communications to me at <span class="text-teal-700 font-semibold">[YOUR EMAIL OR MAILING ADDRESS]</span>, rather than to the primary policyholder. I am the person receiving the care.”
         </p>
-        <button onclick="copyScript()" class="mt-3 bg-slate-700 hover:bg-slate-600 text-white font-sans text-xs font-bold px-2.5 py-1 rounded transition">Copy Script</button>
+        <button onclick="copyScript()" class="mt-5 border border-slate-400 hover:border-teal-700 hover:text-teal-700 text-slate-700 font-sans text-xs font-bold px-3 py-2 rounded-sm transition">Copy wording</button>
       </div>
     </section>
 
