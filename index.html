@@ -13,14 +13,13 @@
     h1, h2, h3, h4 { font-family: 'Libre Baskerville', serif; }
     main { position: relative; overflow: hidden; }
     main::before { content: ''; position: absolute; left: 1.25rem; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, #99f6e4 12%, #cbd5e1 50%, transparent 90%); pointer-events: none; }
-    main::after { content: ''; position: absolute; right: -7rem; top: 8rem; width: 16rem; height: 16rem; border: 1px solid #cbd5e1; border-radius: 9999px; pointer-events: none; }
     main > section { max-width: 1120px; margin-left: auto; margin-right: auto; }
     main > section[aria-labelledby="why-privacy-matters"] { max-width: 1400px; }
     main > section:not([aria-labelledby="why-privacy-matters"]) .text-xs { font-size: 0.875rem; line-height: 1.55; }
     main > section:not([aria-labelledby="why-privacy-matters"]) .text-sm { font-size: 1rem; line-height: 1.6; }
     main > section:not([aria-labelledby="why-privacy-matters"]) h2 { position: relative; padding-bottom: .75rem; }
     main > section:not([aria-labelledby="why-privacy-matters"]) h2::after { content: ''; display: block; width: 3rem; height: 3px; background: #0f766e; position: absolute; left: 0; bottom: 0; }
-    @media (max-width: 767px) { main::before, main::after { display: none; } }
+    @media (max-width: 767px) { main::before { display: none; } }
     .step-card { transition: all 0.2s ease-in-out; }
     .step-card:hover { transform: translateY(-2px); }
   </style>
