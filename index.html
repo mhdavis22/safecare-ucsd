@@ -63,7 +63,7 @@
         <span>1. Select Your Health Insurance Plan</span>
       </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <button onclick="showGuide('ucship')" id="btn-ucship" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
           <div class="font-bold text-slate-900 mb-1">UC SHIP (Anthem)</div>
           <div class="text-xs text-slate-500">I have the UCSD student health insurance plan.</div>
@@ -72,6 +72,11 @@
         <button onclick="showGuide('private')" id="btn-private" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
           <div class="font-bold text-slate-900 mb-1">Parent's Private Plan</div>
           <div class="text-xs text-slate-500">Kaiser, Blue Shield, Aetna, Cigna, etc., paid by parents.</div>
+        </button>
+
+        <button onclick="showGuide('uninsured')" id="btn-uninsured" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
+          <div class="font-bold text-slate-900 mb-1">No Health Insurance</div>
+          <div class="text-xs text-slate-500">I do not currently have health coverage.</div>
         </button>
       </div>
 
@@ -133,6 +138,30 @@
           </div>
         </div>
       </div>
+
+      <div id="guide-uninsured" class="hidden space-y-6 border-t border-slate-100 pt-6">
+        <div class="bg-teal-50 border-l-4 border-teal-600 p-4 rounded-r-lg">
+          <h3 class="font-bold text-teal-900 text-sm">You still have options</h3>
+          <p class="text-xs text-teal-800 mt-1">Start with coverage screening, then ask the clinic about confidential billing and lower-cost services.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="font-bold text-slate-900">1. Check Medi-Cal or Covered California</h3>
+            <p class="text-xs text-slate-600 mt-1">One application can check whether you qualify for free or low-cost Medi-Cal or financial help through Covered California.</p>
+            <a href="https://www.coveredca.com/" target="_blank" rel="noopener" class="text-xs text-teal-700 font-semibold underline mt-2 inline-block">Check coverage at CoveredCA.com</a>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900">2. Ask about low-cost care</h3>
+            <p class="text-xs text-slate-600 mt-1">Community clinics and Planned Parenthood may offer sliding-scale prices. Some uninsured patients may qualify for no-cost reproductive health services through Family PACT.</p>
+            <a href="https://www.plannedparenthood.org/health-center/california/san-diego" target="_blank" rel="noopener" class="text-xs text-teal-700 font-semibold underline mt-2 inline-block">Find Planned Parenthood care in San Diego</a>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900">3. Ask before your appointment</h3>
+            <p class="text-xs text-slate-600 mt-1">Ask whether the visit is confidential, what it will cost, and whether bills, texts, or mail will be sent to anyone else.</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500">Eligibility and prices vary, so confirm details directly with the provider.</p>
+      </div>
     </section>
 
     <section id="ccr-section" class="border-l-4 border-slate-300 pl-5 md:pl-8 mb-12">
@@ -145,28 +174,6 @@
         </p>
         <button onclick="copyScript()" class="mt-3 bg-slate-700 hover:bg-slate-600 text-white font-sans text-xs font-bold px-2.5 py-1 rounded transition">Copy Script</button>
       </div>
-    </section>
-
-    <section id="no-insurance" aria-labelledby="no-insurance-heading" class="border-l-4 border-teal-600 pl-5 md:pl-8 mb-12">
-      <h2 id="no-insurance-heading" class="text-xl font-bold text-slate-900 mb-2">No health insurance?</h2>
-      <p class="text-sm text-slate-600 mb-5 max-w-3xl">You still have options for care. Start with coverage screening, then ask the clinic about confidential billing and lower-cost services.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div>
-          <h3 class="font-bold text-slate-900">1. Check Medi-Cal or Covered California</h3>
-          <p class="text-xs text-slate-600 mt-1">One application can check whether you qualify for free or low-cost Medi-Cal or financial help through Covered California.</p>
-          <a href="https://www.coveredca.com/" target="_blank" rel="noopener" class="text-xs text-teal-700 font-semibold underline mt-2 inline-block">Check coverage at CoveredCA.com</a>
-        </div>
-        <div>
-          <h3 class="font-bold text-slate-900">2. Ask about low-cost care</h3>
-          <p class="text-xs text-slate-600 mt-1">Community clinics and Planned Parenthood may offer sliding-scale prices. Some uninsured patients may qualify for no-cost reproductive health services through Family PACT.</p>
-          <a href="https://www.plannedparenthood.org/health-center/california/san-diego" target="_blank" rel="noopener" class="text-xs text-teal-700 font-semibold underline mt-2 inline-block">Find Planned Parenthood care in San Diego</a>
-        </div>
-        <div>
-          <h3 class="font-bold text-slate-900">3. Ask before your appointment</h3>
-          <p class="text-xs text-slate-600 mt-1">Ask whether the visit is confidential, what it will cost, and whether bills, texts, or mail will be sent to anyone else. Do not share a parent’s insurance information if you do not want that plan billed.</p>
-        </div>
-      </div>
-      <p class="text-xs text-slate-500 mt-5">Medi-Cal and Covered California eligibility depends on your circumstances. Clinic programs and prices vary, so confirm details directly with the provider.</p>
     </section>
 
     <section class="border-l-4 border-teal-600 pl-5 md:pl-8">
@@ -210,8 +217,10 @@
     function showGuide(type) {
       document.getElementById('guide-ucship').classList.add('hidden');
       document.getElementById('guide-private').classList.add('hidden');
+      document.getElementById('guide-uninsured').classList.add('hidden');
       document.getElementById('btn-ucship').classList.remove('border-blue-600', 'bg-blue-50/50');
       document.getElementById('btn-private').classList.remove('border-blue-600', 'bg-blue-50/50');
+      document.getElementById('btn-uninsured').classList.remove('border-blue-600', 'bg-blue-50/50');
 
       if (type === 'ucship') {
         document.getElementById('guide-ucship').classList.remove('hidden');
@@ -219,6 +228,9 @@
       } else if (type === 'private') {
         document.getElementById('guide-private').classList.remove('hidden');
         document.getElementById('btn-private').classList.add('border-blue-600', 'bg-blue-50/50');
+      } else if (type === 'uninsured') {
+        document.getElementById('guide-uninsured').classList.remove('hidden');
+        document.getElementById('btn-uninsured').classList.add('border-blue-600', 'bg-blue-50/50');
       }
     }
 
