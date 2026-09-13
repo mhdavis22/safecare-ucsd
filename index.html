@@ -242,7 +242,7 @@
     </section>
 
     <section id="resources" class="border-l-4 border-teal-600 pl-5 md:pl-10 pr-6 md:pr-12">
-      <h2 class="text-xl font-bold text-slate-900 mb-4">3. Confidential On-Campus & Local Resources</h2>
+      <h2 class="text-xl font-bold text-slate-900 mb-4"><span id="resources-step">2</span>. Confidential On-Campus & Local Resources</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div class="p-3 bg-slate-50 rounded border border-slate-200">
           <div class="font-bold text-slate-900">UCSD LGBT Resource Center</div>
@@ -305,6 +305,8 @@
         document.getElementById('guide-uninsured').classList.remove('hidden');
         document.getElementById('btn-uninsured').classList.add('border-blue-600', 'bg-blue-50/50');
       }
+
+      document.getElementById('resources-step').textContent = type === 'private' || type === 'raft' ? '3' : '2';
     }
 
     // Emergency Exit Button (Redirects to Google & replaces history)
