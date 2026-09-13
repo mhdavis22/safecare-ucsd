@@ -84,7 +84,7 @@
         <span>1. Select Your Health Insurance Plan</span>
       </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <button onclick="showGuide('ucship')" id="btn-ucship" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
           <div class="font-bold text-slate-900 mb-1">UC SHIP (Anthem)</div>
           <div class="text-xs text-slate-500">I have the UCSD student health insurance plan.</div>
@@ -93,6 +93,11 @@
         <button onclick="showGuide('private')" id="btn-private" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
           <div class="font-bold text-slate-900 mb-1">Parent's Private Plan</div>
           <div class="text-xs text-slate-500">Kaiser, Blue Shield, Aetna, Cigna, etc., paid by parents.</div>
+        </button>
+
+        <button onclick="showGuide('raft')" id="btn-raft" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
+          <div class="font-bold text-slate-900 mb-1">RAFT</div>
+          <div class="text-xs text-slate-500">I am enrolled in RAFT (Reduced Access Fee for Tritons).</div>
         </button>
 
         <button onclick="showGuide('uninsured')" id="btn-uninsured" class="p-4 rounded-lg border-2 border-slate-200 text-left hover:border-blue-500 focus:outline-none transition">
@@ -176,6 +181,23 @@
          </div>
 </div>
       </div>
+      <div id="guide-raft" class="hidden space-y-6 border-t border-slate-100 pt-6">
+        <div class="bg-violet-50 border-l-4 border-violet-600 p-4 rounded-r-lg">
+          <h3 class="font-bold text-violet-900 text-sm">RAFT Coverage</h3>
+          <p class="text-xs text-violet-800 mt-1">RAFT covers certain common medical procedures for primary care at SHS. All other services, including certain lab tests or prescriptions, are not covered by RAFT and must be paid either at the time you receive the service, or else they will be directly billed to your student account. You can request an itemized bill to send to your private insurance, given that your insurance will cover care at SHS. <a href="https://shwadmin.ucsd.edu/insurance-other/raft/index.html" target="_blank" rel="noopener" class="font-semibold underline">Learn more about RAFT</a>.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="step-card bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <span class="text-xs font-bold text-viole-600 uppercase tracking-wider">Step 1</span>
+            <h4 class="font-bold text-slate-900">Request a Confidential Communication Request</h4>
+            <p class="text-xs text-slate-600 mt-1">Because several services excluded by RAFT’s plan would likely lead to you needing to use a private insurance plan held by your parents, it is best to request a Confidential Communications Request (CCR) form.</p>
+            <div class="mt-3">
+              <a href="#ccr-section" class="inline-block text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded hover:bg-slate-800 transition">Jump to CCR Generator &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="guide-uninsured" class="hidden space-y-6 border-t border-slate-100 pt-6">
         <div class="bg-teal-50 border-l-4 border-teal-600 p-4 rounded-r-lg">
           <h3 class="font-bold text-teal-900 text-sm">You still have options</h3>
@@ -202,7 +224,7 @@
         <h2 class="text-xl font-bold text-slate-900">2. Confidential Communication Request</h2>
         <span class="hidden sm:block text-[10px] uppercase tracking-[0.2em] text-slate-400">Suggested wording</span>
       </div>
-      <p class="text-xs text-slate-600 mb-5">For people on a parent’s plan who need to request a CCR. You can make the request by phone, mail, or email. UC SHIP students can use the Anthem steps above instead.</p>
+      <p class="text-xs text-slate-600 mb-5">For people on a parent’s plan or RAFT who need to request a CCR. You can make the request by phone, mail, or email. UC SHIP students can use the Anthem steps above instead.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-xs text-slate-600">
         <div><span class="font-bold text-slate-900">Find the insurer</span><br>Use the customer-service phone number on the back of your insurance card, or sign in to the insurer’s website or member portal.</div>
@@ -260,10 +282,12 @@
     function showGuide(type) {
       document.getElementById('guide-ucship').classList.add('hidden');
       document.getElementById('guide-private').classList.add('hidden');
+      document.getElementById('guide-raft').classList.add('hidden');
       document.getElementById('guide-uninsured').classList.add('hidden');
       document.getElementById('ccr-section').classList.add('hidden');
       document.getElementById('btn-ucship').classList.remove('border-blue-600', 'bg-blue-50/50');
       document.getElementById('btn-private').classList.remove('border-blue-600', 'bg-blue-50/50');
+      document.getElementById('btn-raft').classList.remove('border-blue-600', 'bg-blue-50/50');
       document.getElementById('btn-uninsured').classList.remove('border-blue-600', 'bg-blue-50/50');
 
       if (type === 'ucship') {
@@ -272,6 +296,10 @@
       } else if (type === 'private') {
         document.getElementById('guide-private').classList.remove('hidden');
         document.getElementById('btn-private').classList.add('border-blue-600', 'bg-blue-50/50');
+        document.getElementById('ccr-section').classList.remove('hidden');
+      } else if (type === 'raft') {
+        document.getElementById('guide-raft').classList.remove('hidden');
+        document.getElementById('btn-raft').classList.add('border-blue-600', 'bg-blue-50/50');
         document.getElementById('ccr-section').classList.remove('hidden');
       } else if (type === 'uninsured') {
         document.getElementById('guide-uninsured').classList.remove('hidden');
